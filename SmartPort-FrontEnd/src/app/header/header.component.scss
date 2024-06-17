@@ -1,0 +1,25 @@
+ion-header {
+    --background: rgb(14, 46, 69);
+  
+    ion-toolbar {
+      --background: inherit;
+      --color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 16px;
+    }
+  
+    ion-title {
+      flex-grow: 1;
+      text-align: center;
+      margin: 0;
+    }
+  
+    ion-icon {
+      margin-right: auto;
+      --background: inherit;
+      font-size: 24px;
+    }
+}
+  

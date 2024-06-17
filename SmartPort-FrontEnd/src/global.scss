@@ -1,0 +1,113 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+@import "@ionic/angular/css/palettes/dark.system.css";
+
+
+ion-tab-button {
+    --background: rgb(59, 141, 201); // Cambia el color de fondo de las pestañas
+
+    --color-selected: rgb(136, 0, 21); // Cambia el color de la pestaña activa
+
+    --color: black; // Cambia el color del texto de las pestañas
+
+    ion-img {
+        background-size: contain;
+        width: 24px;
+        height: 24px;
+    }
+}
+
+ion-content {
+    --background: rgb(89, 185, 255); // Aplica el color de fondo definido en variables.scss al contenido de la pestaña uno
+}
+
+ion-button {
+    width: 100%;
+    font-size: 100%;
+
+    ion-text.button {
+        font-size: 200%;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}
+
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    flex-direction: column; /* To align items vertically */
+}
+
+.image-container {
+    display: inline-block;
+    border: 10px solid #0b331b; /* Añade el borde aquí */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+    ion-img {
+      display: block;
+      background-size: contain;
+      height: 100%;
+      width: auto;
+    }
+}
+
+ion-list {
+    --background: rgb(14, 46, 69); /* Define el color de fondo de ion-list */
+    --color: white; /* Define el color de texto de ion-list */
+    --border-color: rgb(14, 46, 69);
+    max-height: 80%;
+
+    ion-item {
+        --background: inherit; /* Cambia el color de fondo de ion-item */
+        --color: inherit;
+        --border-color: inherit;
+    }
+      
+    ion-item::part(checkbox) {
+        --background: inherit; /* Cambia el color de fondo del checkbox en ion-item */
+        --color: inherit;
+        --border-color: inherit;
+    }
+      
+    ion-item ion-label {
+        --background: inherit; /* Hereda el color de fondo de ion-list */
+        --color: inherit;
+        --border-color: inherit;
+    }
+}

@@ -1,0 +1,24 @@
+ion-tab-button.tab-selected ion-img.maze,
+ion-tab-button:hover ion-img.maze{
+    content: url('../../assets/icon/laberintoSeLected.png');
+}
+
+ion-tab-button.tab-selected ion-img.robot,
+ion-tab-button:hover ion-img.robot{
+    content: url('../../assets/icon/robotSeLected.png');
+}
+
+ion-tab-button.tab-selected ion-img.user,
+ion-tab-button:hover ion-img.user{
+    content: url('../../assets/icon/usuarioSeLected.png');
+}
+
+ion-tab-bar {
+    display: flex;
+    width: 100%;
+}
+  
+ion-tab-button {
+    flex: 1; /* Distribuye el ancho de los ion-tab-button de manera uniforme dentro del ion-tab-bar */
+    max-width: 100%; 
+}
