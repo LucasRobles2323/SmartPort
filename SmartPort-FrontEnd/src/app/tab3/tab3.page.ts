@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-
+import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { FormError, mensajesErr } from '../misc/form-errors';
@@ -12,7 +12,7 @@ import { FormError, mensajesErr } from '../misc/form-errors';
 export class Tab3Page implements OnInit  {
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private router: Router, private route: ActivatedRoute) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]]
@@ -23,13 +23,14 @@ export class Tab3Page implements OnInit  {
     // Verificar si ya inicio sesión
   }
 
-  get btnText() {
-    return this.loginForm.valid ? 'Iniciar Sesión' : 'Iniciar Sesión';
-  }
-
-  // Método que se ejecuta al enviar el formulario
+  // Método que se ejecuta al completar formularo y presionar el boton
   onSubmit() {
     console.log(this.loginForm.value);
+  }
+
+  // Método para dirigirse a la pagina registro de usuario.
+  goToRegister() {
+    this.router.navigate(['registro-usuario'], {relativeTo: this.route });
   }
 
   /**

@@ -11,8 +11,6 @@
             labelPlacement="floating"
             formControlName="email"
             type="email"
-            name="email"
-            id="email"
             placeholder="email@gmail.com"
             [errorText]="formError('email')"
             >
@@ -25,8 +23,6 @@
             labelPlacement="floating"
             formControlName="password"
             type="password"
-            name="password"
-            id="password"
             placeholder="1234567"
             [errorText]="formError('password')"
             >
@@ -36,18 +32,19 @@
       </form>
   
       <ion-button 
-        class="ion-padding ion-text-center" 
+        class="ion-padding ion-text-center"
+        (click)="onSubmit()"
         expand="block" 
         type="button"
         [disabled]="!loginForm.valid">
         <ion-icon name="log-in-outline"></ion-icon>
-        {{btnText}}
+        Iniciar Sesión
       </ion-button>
       
 
       <div class="ion-text-center">
         <p>Si no posees cuenta, puedes registrarte</p>
-        <ion-text>Crear una cuenta nueva</ion-text>
+        <ion-text (click)="goToRegister()">Crear una cuenta nueva</ion-text>
       </div>
       
     </div>

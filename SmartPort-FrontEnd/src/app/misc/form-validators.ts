@@ -24,15 +24,13 @@ function validaDV(rut: string) {
  * @returns Objeto con la validación o nulo si es válida
  */
 export const passwordMatchValidator: ValidatorFn = (
-    control: AbstractControl
-  ): ValidationErrors | null => {
-    const password = control.parent?.get('password')?.value;
-    const confirmPassword = control.value;
+    control: AbstractControl): ValidationErrors | null => {
+      const password = control.parent?.get('password')?.value;
+      const confirmPassword = control.value;
 
-    return password && confirmPassword && password === confirmPassword
-      ? null
-      : { passwordConfirm: true };
-  };
+      return password && confirmPassword && password === confirmPassword
+        ? null: { passwordConfirm: true };
+    };
 
 /**
  * Función que valida el formato y dígito verificador de un RUT
