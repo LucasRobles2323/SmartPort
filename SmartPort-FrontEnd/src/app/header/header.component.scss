@@ -1,5 +1,5 @@
 ion-header {
-    --background: rgb(14, 46, 69);
+    --background: linear-gradient(to right, var(--ion-color-secondary), var(--ion-color-primary));
   
     ion-toolbar {
       --background: inherit;
