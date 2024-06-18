@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { FormError, mensajesErr } from '../misc/form-errors';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-tab3',
@@ -11,8 +12,10 @@ import { FormError, mensajesErr } from '../misc/form-errors';
 })
 export class Tab3Page implements OnInit  {
   loginForm: FormGroup;
+  isLoggedIn: boolean = false;
 
-  constructor(private fb: FormBuilder, private router: Router, private route: ActivatedRoute) {
+  constructor(private fb: FormBuilder, private authService: AuthenticationService, 
+              private router: Router, private route: ActivatedRoute) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]]
@@ -21,11 +24,30 @@ export class Tab3Page implements OnInit  {
 
   ngOnInit() {
     // Verificar si ya inicio sesión
+    this.authService.isLoggedIn$.subscribe(isLoggedIn => {
+      this.isLoggedIn = isLoggedIn;
+    });
   }
 
   // Método que se ejecuta al completar formularo y presionar el boton
   onSubmit() {
     console.log(this.loginForm.value);
+
+    const email = this.loginForm.get('email')?.value;
+    const password = this.loginForm.get('password')?.value;
+
+    if( (email == "lux23@mail.com" && password == "1234567") || (email == "ger32@mail.com" && password == "7654321")){
+      // Guardar información de sesión en el almacenamiento local
+      localStorage.setItem('session', JSON.stringify({ loggedIn: true }));
+      // Actualizar estado de isLoggedIn
+      this.isLoggedIn = true;
+
+      this.router.navigate(['sesion-usuario'], {queryParams: { email, password }, relativeTo: this.route });
+    }
+    else{
+      alert('Email o contraseña incorrectos');
+    }
+
   }
 
   // Método para dirigirse a la pagina registro de usuario.

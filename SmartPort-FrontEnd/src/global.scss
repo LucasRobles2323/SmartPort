@@ -35,3 +35,28 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+ion-button {
+    width: 100%;
+    font-size: 100%;
+    font-weight: bold;
+    --background: linear-gradient(to right, var(--ion-color-primary), var(--ion-color-secondary));
+    --color: #ffffff;
+    --border-width: 3px; 
+    --border-style: solid; 
+    --border-color: var(--ion-color-tertiary); /* Ajusta el color del borde */
+
+    ion-icon {
+        background-size: contain;
+        margin-right: 5px;
+        width: 24px;
+        height: 24px;
+    }
+}
+
+ion-button.out-button{
+    --background: red;
+    --color: #ffffff;
+    --border-width: 3px;
+    --border-color: var(--ion-color-tertiary);
+}

@@ -2,30 +2,30 @@
 -- Table `Usuario`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Usuario` (
-  `idUser` INT NOT NULL,
+  `email` VARCHAR(100) NOT NULL,
   `userName` VARCHAR(100) NOT NULL,
   `namePerson` VARCHAR(100) NOT NULL,
-  `email` VARCHAR(100) NOT NULL,
   `password` VARCHAR(100) NOT NULL,
   `isAdmin` BOOLEAN NOT NULL,
-  PRIMARY KEY (`idUser`))
+  `isSuscribed` BOOLEAN NOT NULL,
+  PRIMARY KEY (`email`))
 
 
 -- -----------------------------------------------------
 -- Table `Empresario`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Empresario` (
-  `idUser` INT NOT NULL,
+  `email` VARCHAR(100) NOT NULL,
   `userName` VARCHAR(100) NOT NULL,
   `namePerson` VARCHAR(100) NOT NULL,
-  `email` VARCHAR(100) NOT NULL,
   `password` VARCHAR(100) NOT NULL,
   `isAdmin` BOOLEAN NOT NULL,
+  `isSuscribed` BOOLEAN NOT NULL,
   `rutCompany` VARCHAR(50) NOT NULL,
   `rut` VARCHAR(20) NOT NULL,
   `idCompany` INT NOT NULL,
   `nameCompany` VARCHAR(100) NOT NULL,
-  PRIMARY KEY (`idUser`))
+  PRIMARY KEY (`email`))
 
 
 -- -----------------------------------------------------
