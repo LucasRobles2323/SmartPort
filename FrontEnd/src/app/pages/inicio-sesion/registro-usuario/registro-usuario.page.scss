@@ -1,0 +1,12 @@
+p {
+    color: var(--ion-color-light);
+    font-size: 14px;
+    margin-bottom: 5px;
+
+    ion-text {
+        color: var(--ion-color-danger);
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}

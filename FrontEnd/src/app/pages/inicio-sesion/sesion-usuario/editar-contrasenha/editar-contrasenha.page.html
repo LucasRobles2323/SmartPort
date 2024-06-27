@@ -1,0 +1,51 @@
+<app-header [title]="'Cambiar Contraseña'"></app-header>
+
+<ion-content [fullscreen]="true">
+  <div class="center-content"> 
+    
+    <form [formGroup]="userPasswordForm" class="ion-margin-top ion-padding">
+  
+      <ion-item lines="none">
+        <ion-input 
+          label="Contraseña"
+          labelPlacement="floating"
+          formControlName="password"
+          type="password"
+          placeholder="1234567"
+          [errorText]="formError('password')"
+        ></ion-input>
+      </ion-item>
+      
+      <ion-item lines="none">
+        <ion-input
+          label="Confirmar Contraseña"
+          labelPlacement="floating"
+          formControlName="passwordConfirm"
+          type="password"
+          placeholder="1234567"
+          [errorText]="formError('passwordConfirm')"
+        ></ion-input>
+      </ion-item>
+
+    </form>
+
+    <ion-button 
+      class="ion-padding"
+      (click)="changePassword()"
+      expand="block" 
+      type="button"
+      [disabled]="!userPasswordForm.valid">
+      <ion-icon name="log-in-outline"></ion-icon>
+      Cambiar Contraseña
+    </ion-button>
+
+    <ion-button class="ion-padding"
+      (click)="goToUser()"
+      expand="block" 
+      type="button">
+      <ion-icon name="log-in-outline"></ion-icon>
+      ¿Volver a usuario?
+    </ion-button>
+    
+  </div>
+</ion-content>

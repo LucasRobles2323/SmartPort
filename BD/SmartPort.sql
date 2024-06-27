@@ -8,25 +8,9 @@ CREATE TABLE IF NOT EXISTS `Usuario` (
   `password` VARCHAR(100) NOT NULL,
   `isAdmin` BOOLEAN NOT NULL,
   `isSuscribed` BOOLEAN NOT NULL,
+  `isBusiness` BOOLEAN NOT NULL,
+  `rut` VARCHAR(20) UNIQUE,
   PRIMARY KEY (`email`))
-
-
--- -----------------------------------------------------
--- Table `Empresario`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Empresario` (
-  `email` VARCHAR(100) NOT NULL,
-  `userName` VARCHAR(100) NOT NULL,
-  `namePerson` VARCHAR(100) NOT NULL,
-  `password` VARCHAR(100) NOT NULL,
-  `isAdmin` BOOLEAN NOT NULL,
-  `isSuscribed` BOOLEAN NOT NULL,
-  `rutCompany` VARCHAR(50) NOT NULL,
-  `rut` VARCHAR(20) NOT NULL,
-  `idCompany` INT NOT NULL,
-  `nameCompany` VARCHAR(100) NOT NULL,
-  PRIMARY KEY (`email`))
-
 
 -- -----------------------------------------------------
 -- Table `Ruta`

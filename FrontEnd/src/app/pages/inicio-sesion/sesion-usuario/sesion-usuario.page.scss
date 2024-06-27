@@ -1,0 +1,22 @@
+ion-card{
+    width: 97%;
+    color: black;
+    --background: linear-gradient(to right, var(--ion-color-primary), var(--ion-color-secondary));
+    
+    ion-card-header ion-card-title{
+        font-style: bold;
+        color: gray;
+    }
+
+    ion-card-content ion-list{
+        background-color: linear-gradient(to left, var(--ion-color-primary), var(--ion-color-secondary));
+        border: 3px;
+
+        ion-item{
+            --background: inherit;
+            color: inherit;
+            border-radius: 100px;
+            margin-bottom: none;
+        }
+    }
+}

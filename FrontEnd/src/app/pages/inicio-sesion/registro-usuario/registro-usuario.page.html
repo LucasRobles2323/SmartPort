@@ -1,0 +1,87 @@
+<app-header [title]="'Registro Usuario'"></app-header>
+
+<ion-content [fullscreen]="true">
+  <div class="center-content"> 
+    <form [formGroup]="registerForm" class="ion-margin-top ion-padding">
+
+      <ion-item>
+        <ion-input
+          label="Nombre"
+          labelPlacement="floating"
+          formControlName="nombre"
+          type="text"
+          placeholder="Luciano Toro"
+          [errorText]="formError('nombre')"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="Nombre de Usuario"
+          labelPlacement="floating"
+          formControlName="nombre_usuario"
+          type="text"
+          placeholder="Luciano Toro"
+          [errorText]="formError('nombre')"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-input
+          label="Correo electrónico"
+          labelPlacement="floating"
+          formControlName="email"
+          type="email"
+          placeholder="email@gmail.com"
+          [errorText]="formError('email')"
+        ></ion-input>
+      </ion-item>
+  
+      <ion-item lines="none">
+        <ion-input 
+          label="Contraseña"
+          labelPlacement="floating"
+          formControlName="password"
+          type="password"
+          placeholder="1234567"
+          [errorText]="formError('password')"
+        ></ion-input>
+      </ion-item>
+      
+      <ion-item lines="none">
+        <ion-input
+          label="Confirmar Contraseña"
+          labelPlacement="floating"
+          formControlName="passwordConfirm"
+          type="password"
+          placeholder="1234567"
+          [errorText]="formError('passwordConfirm')"
+        ></ion-input>
+      </ion-item>
+
+    </form>
+
+    <ion-button 
+          class="ion-padding"
+          (click)="register()"
+          expand="block" 
+          type="button"
+          [disabled]="!registerForm.valid">
+          <ion-icon name="log-in-outline"></ion-icon>
+          Registrar Usuario
+        </ion-button>
+
+    <div class="ion-padding ion-text-center">
+      <p>Al registrarse usted acepta nuestros <ion-text>Terminos de Servicio</ion-text> y <ion-text>Politica de privacidad</ion-text>.</p>
+    </div>
+    
+    <ion-button class="ion-padding"
+        (click)="goToLogin()"
+        expand="block" 
+        type="button">
+        <ion-icon name="log-in-outline"></ion-icon>
+        ¿Ya tienes cuenta?
+    </ion-button>
+    
+  </div>
+</ion-content>
