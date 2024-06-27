@@ -21,6 +21,12 @@ SET time_zone = "+00:00";
 -- Base de datos: `smartport`
 --
 
+-- Crear la base de datos si no existe
+CREATE DATABASE IF NOT EXISTS `SmartPort`;
+
+-- Seleccionar la base de datos
+USE `SmartPort`;
+
 -- --------------------------------------------------------
 
 --
