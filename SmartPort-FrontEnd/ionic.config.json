@@ -1,7 +1,0 @@
-{
-  "name": "SmartPort-FrontEnd",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
