@@ -9,6 +9,11 @@ ion-tab-bar {
 
         ion-img {
             background-size: contain;
+            width: 40px;
+            height: 40px;
+        }
+        
+        ion-img.user{
             width: 30px;
             height: 30px;
         }
@@ -21,17 +26,22 @@ ion-tab-button.tab-selected {
 
     ion-img {
         margin-right: 4px;
+        background-size: contain;
+        width: 30px;
+        height: 30px;
     }
 
     ion-img.map{
-        content: url('../../../assets/icon/laberintoSeLected.png');
+        content: url('../../../assets/icon/mapSelected.png');
     }
 
     ion-img.stops-lines{
-        content: url('../../../assets/icon/robotSeLected.png');
+        content: url('../../../assets/icon/busSelected.png');
     }
 
     ion-img.user{
-        content: url('../../../assets/icon/usuarioSeLected.png');
+        width: 20px;
+        height: 20px;
+        content: url('../../../assets/icon/usuarioSelected.png');
     }
 }

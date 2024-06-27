@@ -57,7 +57,7 @@ export class SesionUsuarioPage implements OnInit {
   }
 
   viewReports() {
-    this.redirigirCambiarContrasenha();
+    this.redirigirVerReportes();
   }
 
   manageUsers() {
@@ -114,7 +114,6 @@ export class SesionUsuarioPage implements OnInit {
   }
 
   private redirigirVerReportes(){
-    alert("Pagina aun no creada.");
-    //this.router.navigate(['inicio-sesion/sesion-usuario/ver-reportes']);
+    this.router.navigate(['inicio-sesion/sesion-usuario/ver-reporte']);
   }
 }

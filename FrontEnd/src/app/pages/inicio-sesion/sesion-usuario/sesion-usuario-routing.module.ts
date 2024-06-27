@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'admin-delete-users',
     loadChildren: () => import('./admin-delete-users/admin-delete-users.module').then( m => m.AdminDeleteUsersPageModule)
+  },
+  {
+    path: 'ver-reporte',
+    loadChildren: () => import('./ver-reporte/ver-reporte.module').then( m => m.VerReportePageModule)
   }
 
 ];

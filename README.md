@@ -82,13 +82,15 @@ Primero preparemos XAMPP, siga las siguientes instrucciones **EN ORDEN**.
 
 ![splithecho](Otros/terminal_split_hecho.png)
 
-### 2. Iniciar BackEnd (asumiendo que las librerias ya estan instaladas).
+### 2. Iniciar BackEnd.
 
 1. Iniciaremos el backend en la terminal izquierda, primero tenemos que dirigirnos a Backend con
 ~~~
 cd BackEnd
 ~~~
 ![back](Otros/BackEnd.png)
+
+- **Instalar librerias**, si no las tiene instaladas. en el backend debe usar el comando 
 
 2. En la consola usar el comando
 ~~~
@@ -116,12 +118,12 @@ npm install
 
 - Tardara unos minutos. En la imagen sale 2 segundos porque ya estaban instaladas.
 
-3. Ahora se inicia el frontend (recordar que XAMPP y Backend deben star corriendo) con el comando
+3. Ahora se inicia el frontend, en la consola derecha (recordar que XAMPP y Backend deben estar corriendo) con el comando
 ~~~
 ionic serve
 ~~~
 ![frontLevantado](Otros/FrontEnd_Levantado.png)
 
-- Para una mejor experiencia, usar herramientas de desarrollador para verlo en una pantalla tamaño celular (despues de todo se diseño para ser aplicación movil).
+# Para una mejor experiencia, usar herramientas de desarrollador para verlo en una pantalla tamaño celular (despues de todo se diseño para ser aplicación movil).
 
 
