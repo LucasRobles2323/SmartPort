@@ -1,0 +1,22 @@
+[
+    {
+        "email":"lucasrobles23@mail.cl",
+        "password":"goku4321",
+        "estado":"Es administrador, esta suscrito y es empresario"
+    },
+    {
+        "email":"geraldespi45@mail.cl",
+        "password":"espi45za",
+        "estado":"Es administrador, no esta suscrito y no es empresario"
+    },
+    {
+        "email":"example@mail.com",
+        "password":"example23",
+        "estado":"No es administrador, no esta suscrito y no es empresario"
+    },
+    {
+        "email":"example2@mail.com",
+        "password":"example232",
+        "estado":"No es administrador, esta suscrito y no es empresario"
+    }
+]

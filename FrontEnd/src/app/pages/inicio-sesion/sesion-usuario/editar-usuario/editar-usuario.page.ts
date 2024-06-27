@@ -3,13 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { FormError, mensajesErr } from 'src/app/misc/form-errors';
-import { rutValidator } from 'src/app/misc/form-validators';
 import { UsuariosService } from 'src/app/services/usuarios.service';
-
-interface Region {
-  id: string;
-  nombre: string;
-}
 
 @Component({
   selector: 'app-editar-usuario',
@@ -24,19 +18,13 @@ export class EditarUsuarioPage implements OnInit {
               private router: Router) {
     // Inicializar el formulario con los campos y validaciones necesarias
     this.editForm = this.fb.group({
-      nombre: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(40)]],
-      nombre_usuario: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(40)]],
-      rut: [''],
+      namePerson: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(40)]],
+      userName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(40)]],
     });
   }
 
   ngOnInit() {
     this.loadCurrentUser(); // Cargar datos del usuario actual al inicializar el componente
-
-    if(this.currentUser.isBusiness && this.currentUser.isAdmin){
-      // Validar el campo 'rut' solo si existe y es necesario
-      this.validateRutField();
-    }
   }
 
   // Método para actualizar los datos del usuario
@@ -46,28 +34,13 @@ export class EditarUsuarioPage implements OnInit {
 
       // Actualizar solo los campos modificados
       const updatedUserData = {
-        nombre: this.editForm.get('nombre')!.value,
-        nombre_usuario: this.editForm.get('nombre_usuario')!.value,
-        rut: this.editForm.get('rut')!.value,
-        isAdmin: false,
-        isSuscribed: false,
-        isBusiness: false,
+        namePerson: this.editForm.get('namePerson')!.value,
+        userName: this.editForm.get('userName')!.value,
+        rut: this.currentUser.rut,
+        isAdmin: this.currentUser.isAdmin,
+        isSuscribed: this.currentUser.isSuscribed,
+        isBusiness: this.currentUser.isBusiness,
       };
-
-      // Agregar isAdmin si está presente en currentUser
-      if (this.currentUser.isAdmin) {
-        updatedUserData['isAdmin'] = this.currentUser.isAdmin;
-      }
-
-      // Agregar isAdmin si está presente en currentUser
-      if (this.currentUser.isSuscribed) {
-        updatedUserData['isSuscribed'] = this.currentUser.isSuscribed;
-      }
-
-      // Agregar isAdmin si está presente en currentUser
-      if (this.currentUser.isBusiness) {
-        updatedUserData['isBusiness'] = this.currentUser.isBusiness;
-      }
 
       // Aquí se actualizan los datos del usuario en la base de datos
       this.usuariosService.updateUser(updatedUserData).subscribe(
@@ -95,8 +68,9 @@ export class EditarUsuarioPage implements OnInit {
    * @returns Mensaje de error asociado al campo, si es que existe
    */
   formError(campo: string): string | null {
-    if (this.editForm.get(campo)!.errors) {
-      const error: FormError = Object.keys(this.editForm.get(campo)!.errors!)[0] as FormError;
+    const control = this.editForm.get(campo);
+    if (control && control.errors) {
+      const error: FormError = Object.keys(control.errors)[0] as FormError;
       return mensajesErr[error];
     }
     return null;
@@ -110,13 +84,9 @@ export class EditarUsuarioPage implements OnInit {
         // Cargar los datos del usuario en el formulario
         if (this.currentUser) {
           this.editForm.patchValue({
-            nombre: this.currentUser.nombre,
-            nombre_usuario: this.currentUser.nombre_usuario,
-            rut: this.currentUser.rut,
+            namePerson: this.currentUser.namePerson,
+            userName: this.currentUser.userName,
           });
-
-          // Validar el campo 'rut' solo si existe y es necesario
-          this.validateRutField();
         }
       },
       (error) => {
@@ -125,20 +95,6 @@ export class EditarUsuarioPage implements OnInit {
         this.redirigirInicioSesion();
       }
     );
-  }
-
-  // Método para validar el campo 'rut' si es necesario
-  private validateRutField() {
-    const rutControl = this.editForm.get('rut');
-
-    if(rutControl){
-      if (this.currentUser && this.currentUser.isSuscribed && this.currentUser.isBusiness) {
-        rutControl.setValidators([Validators.required, rutValidator]);
-      } else {
-        rutControl.clearValidators();
-      }
-      rutControl.updateValueAndValidity();
-    }
   }
 
   // Método para dirigirse a la página de inicio de sesión

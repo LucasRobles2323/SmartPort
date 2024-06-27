@@ -1,12 +1,20 @@
 <app-header [title]="'Administrar Usuarios'"></app-header>
 
 <ion-content [fullscreen]="true">
+  <ion-button class="ion-padding"
+    (click)="goToUser()"
+    expand="block" 
+    type="button">
+    <ion-icon name="log-in-outline"></ion-icon>
+    ¿Volver a usuario?
+  </ion-button>
+
   <ion-list>
 
     <ion-item *ngFor="let user of users">
       <ion-label>
         <h2>{{ user.email }}</h2>
-        <p>RUT: {{ user.username }}</p>
+        <p>Usuario: {{ user.userName }}</p>
       </ion-label>
       <ion-button (click)="deleteUser(user.email)" color="danger">Eliminar</ion-button>
     </ion-item>
@@ -15,6 +23,5 @@
       <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando más datos...">
       </ion-infinite-scroll-content>
     </ion-infinite-scroll>
-  
   </ion-list>
 </ion-content>

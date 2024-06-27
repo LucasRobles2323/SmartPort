@@ -11,8 +11,8 @@ export interface Usuario {
   isAdmin: number; // 1 es true y 0 es false en sql
   isSuscribed: number; // 1 es true y 0 es false en sql
   isBusiness: number; // 1 es true y 0 es false en sql
-  nombre: string;
-  nombre_usuario: string;
+  namePerson: string;
+  userName: string;
   rut: string;
 }
 
@@ -49,6 +49,7 @@ export class SesionUsuarioPage implements OnInit {
   editUser() {
     // Lógica para editar usuario
     this.redirigirEditarUsuario();
+    this.loadCurrentUser();
   }
 
   changePassword() {

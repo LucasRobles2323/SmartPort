@@ -17,17 +17,17 @@
             <ion-label>{{ currentUser.email }}</ion-label>
           </ion-item>
 
-          <ion-item *ngIf="currentUser.nombre_usuario">
+          <ion-item *ngIf="currentUser.userName">
             <ion-label>Nombre de Usuario:</ion-label>
-            <ion-label>{{ currentUser.nombre_usuario }}</ion-label>
+            <ion-label>{{ currentUser.userName }}</ion-label>
           </ion-item>
           
-          <ion-item *ngIf="currentUser.nombre">
+          <ion-item *ngIf="currentUser.namePerson">
             <ion-label>Nombre:</ion-label>
-            <ion-label>{{ currentUser.nombre }}</ion-label>
+            <ion-label>{{ currentUser.namePerson }}</ion-label>
           </ion-item>
           
-          <ion-item *ngIf="currentUser.isBusiness && currentUser.rut">
+          <ion-item *ngIf="currentUser.isBusiness">
             <ion-label>RUT:</ion-label>
             <ion-label>{{ currentUser.rut }}</ion-label>
           </ion-item>

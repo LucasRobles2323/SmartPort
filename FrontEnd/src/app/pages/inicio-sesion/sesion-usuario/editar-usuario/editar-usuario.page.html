@@ -10,7 +10,7 @@
         <ion-input
           label="Nombre"
           labelPlacement="floating"
-          formControlName="nombre"
+          formControlName="namePerson"
           type="text"
           placeholder="Luciano Toro"
           [errorText]="formError('nombre')"
@@ -21,21 +21,10 @@
         <ion-input
           label="Nombre de Usuario"
           labelPlacement="floating"
-          formControlName="nombre_usuario"
+          formControlName="userName"
           type="text"
           placeholder="Luciano Toro"
           [errorText]="formError('nombre')"
-        ></ion-input>
-      </ion-item>
-      
-      <ion-item *ngIf="currentUser && currentUser.isSuscribed && currentUser.isBussines" lines="none">
-        <ion-input
-          label="Rut"
-          labelPlacement="floating"
-          formControlName="rut"
-          type="text"
-          placeholder="27123517-8"
-          [errorText]="formError('rut')"
         ></ion-input>
       </ion-item>
     

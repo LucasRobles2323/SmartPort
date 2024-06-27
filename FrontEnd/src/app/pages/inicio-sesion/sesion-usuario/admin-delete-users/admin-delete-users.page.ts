@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { UsuariosService } from 'src/app/services/usuarios.service';
 
 @Component({
@@ -12,7 +14,7 @@ export class AdminDeleteUsersPage implements OnInit {
   loadedUsers: number = 0;
   usersPerPage: number = 10;
 
-  constructor(private usuariosService: UsuariosService) {}
+  constructor(private router: Router,private usuariosService: UsuariosService) {}
 
   ngOnInit() {
     this.loadUsers();
@@ -58,5 +60,14 @@ export class AdminDeleteUsersPage implements OnInit {
         }
       );
     }
+  }
+
+  goToUser(){
+    this.redirigirUsuario();
+  }
+
+  // Método para dirigirse a la página de inicio de sesión
+  private redirigirUsuario() {
+    this.router.navigate(['inicio-sesion/sesion-usuario']);
   }
 }

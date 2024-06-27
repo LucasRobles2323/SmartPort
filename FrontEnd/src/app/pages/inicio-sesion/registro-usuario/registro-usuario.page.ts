@@ -19,8 +19,8 @@ export class RegistroUsuarioPage implements OnInit {
   {
     // Se inicializa el formulario con los campos requeridos y las validaciones
     this.registerForm = this.fb.group({
-      nombre: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(40)]],
-      nombre_usuario: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(40)]],
+      namePerson: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(40)]],
+      userName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(40)]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(40)]],
       passwordConfirm: ['', [Validators.required, passwordMatchValidator]],
@@ -56,12 +56,13 @@ export class RegistroUsuarioPage implements OnInit {
    * @returns Mensaje de error asociado al campo, si es que existe
    */
   formError(campo: string): string | null {
-    if (this.registerForm.get(campo)!.errors) {
-      const error: FormError = Object.keys(this.registerForm.get(campo)!.errors!)[0] as FormError;
-      return mensajesErr[error];
-    }
-    return null;
+  const control = this.registerForm.get(campo);
+  if (control && control.errors) {
+    const error: FormError = Object.keys(control.errors)[0] as FormError;
+    return mensajesErr[error];
   }
+  return null;
+}
 
   // Método para dirigirse a la pagina registro de usuario.
   private redirigirInicioSesion() {
