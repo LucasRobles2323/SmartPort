@@ -46,6 +46,11 @@
       Cambiar Contraseña
     </ion-button>
 
+    <ion-button *ngIf="isNoSuscribed" 
+      expand="block" class="ion-padding" (click)="suscription()">
+      Suscribirse
+    </ion-button>
+
     <ion-button expand="block" class="out-button ion-padding" 
       (click)="logout()">
       <ion-icon name="log-out-outline"></ion-icon>

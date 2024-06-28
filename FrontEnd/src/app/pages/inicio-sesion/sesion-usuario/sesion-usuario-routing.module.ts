@@ -22,6 +22,10 @@ const routes: Routes = [
   {
     path: 'ver-reporte',
     loadChildren: () => import('./ver-reporte/ver-reporte.module').then( m => m.VerReportePageModule)
+  },
+  {
+    path: 'suscription',
+    loadChildren: () => import('./suscription/suscription.module').then( m => m.SuscriptionPageModule)
   }
 
 ];

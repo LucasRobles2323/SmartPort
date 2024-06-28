@@ -1,22 +1,38 @@
 ion-card{
-    width: 97%;
+    width: 90%;
+    border-radius: 10px;
     color: var(--ion-color-light);
     --background: linear-gradient(to right, var(--ion-color-primary), var(--ion-color-secondary));
     
     ion-card-header ion-card-title{
         font-style: bold;
+        font-size: 24px;
         color: var(--ion-color-light);
     }
 
     ion-card-content ion-list{
         background-color: linear-gradient(to left, var(--ion-color-primary), var(--ion-color-secondary));
-        border: 3px;
+        border: 0;
+        font-size: 20px;
 
         ion-item{
             --background: inherit;
             color: inherit;
-            border-radius: 100px;
             margin-bottom: none;
         }
     }
+}
+
+
+ion-button.noButton {
+    width: 95%;
+    max-width: 600px;
+    font-size: none;
+    font-weight: none;
+    font-style: none;
+    --background: none;
+    --color: none;
+    --border-width: none;
+    --border-style: none; 
+    --border-color: none;
 }

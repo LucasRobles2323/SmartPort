@@ -23,6 +23,7 @@ export interface Usuario {
 })
 export class SesionUsuarioPage implements OnInit {
   currentUser: Usuario | null = null;
+  isNoSuscribed: boolean = false;
   
 
   constructor(private usuariosService: UsuariosService, private authService : AuthService,
@@ -37,6 +38,13 @@ export class SesionUsuarioPage implements OnInit {
     this.usuariosService.getCurrentUser().subscribe(
       (user) => {
         this.currentUser = user;
+        if(this.currentUser?.isBusiness != null){
+          if (this.currentUser.isBusiness == 0){
+            this.isNoSuscribed = true;
+          }
+          else{this.isNoSuscribed = false;}
+        }
+        
       },
       (error) => {
         console.error('Error al cargar el usuario actual', error);
@@ -95,6 +103,14 @@ export class SesionUsuarioPage implements OnInit {
         }
       );
     }
+  }
+
+  suscription(){
+    this.redirigirSuscribirse();
+  }
+
+  private redirigirSuscribirse(){
+    this.router.navigate(['inicio-sesion/sesion-usuario/suscription']);
   }
 
   private redirigirInicioSesion(){
