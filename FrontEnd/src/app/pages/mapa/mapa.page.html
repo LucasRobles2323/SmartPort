@@ -2,6 +2,19 @@
 
 <ion-content [fullscreen]="true">
   <div class="center-content">
+    <!-- Primera imagen -->
+    <div class="map-container">
+      <img src="../../../assets/mapa.png" alt="Mapa" class="responsive-map">
+      <img *ngIf="losbuses" src="../../../assets/group10.png" alt="Imagen 501" class="image-overlay">
+      <img *ngIf="losbuses"src="../../../assets/group10.png" alt="Imagen 501" class="image-overlay2">
 
+      <div class="toggle-container">
+        <ion-toggle (ionChange)="toggleChanged($event)">Mostrar Buses</ion-toggle>
+      </div>
+    </div>
+
+    <!-- Segunda imagen superpuesta -->
+    <div class="second-map-container">
+    </div>
   </div>
 </ion-content>

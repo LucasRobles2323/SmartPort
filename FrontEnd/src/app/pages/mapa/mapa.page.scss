@@ -1,0 +1,47 @@
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .map-container, .second-map-container {
+    position: absolute;
+    width: 100%;
+    margin-bottom: 20px; /* Espacio entre las imágenes */
+  }
+  
+  .responsive-map {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid orange; /* Borde naranja */
+  }
+  
+  .toggle-container {
+    position: absolute;
+    top: 10%; /* Ajusta segúnsea necesaro para posicionar el toggle */
+    left: 30%; /* Ajusta según sea necesario para posicionar el toggle */
+    background-color: transparent; /* Fondo semitransparente para malegibilidad */
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--ion-color-tertiary);
+  }
+  
+  .image-overlay {
+    position: absolute;
+    top: 23%; /* Ajusta según sea necesario para posicionar la imagen encima del mapa */
+    left: 50%; /* Ajusta según sea necesario para posicionar la imagen encima del mapa */
+    max-width: 100%;
+    height: auto;
+    z-index: 100; /* Ajusta el z-index para asegurar que esté encima de mapa.png */
+  }
+
+
+  .image-overlay2 {
+    position: absolute;
+    top: 9%; /* Ajusta según sea necesario para posicionar la imagen encima del mapa */
+    left: 3%; /* Ajusta según sea necesario para posicionar la imagen encima del mapa */
+    max-width: 100%;
+    height: auto;
+    z-index: 100; /* Ajusta el z-index para asegurar que esté encima de mapa.png */
+  }
