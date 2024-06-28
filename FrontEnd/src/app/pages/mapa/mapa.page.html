@@ -8,13 +8,9 @@
       <img *ngIf="losbuses" src="../../../assets/group10.png" alt="Imagen 501" class="image-overlay">
       <img *ngIf="losbuses"src="../../../assets/group10.png" alt="Imagen 501" class="image-overlay2">
 
-      <div class="toggle-container">
+      <div class="toggle-container" *ngIf="isSuscribed">
         <ion-toggle (ionChange)="toggleChanged($event)">Mostrar Buses</ion-toggle>
       </div>
-    </div>
-
-    <!-- Segunda imagen superpuesta -->
-    <div class="second-map-container">
     </div>
   </div>
 </ion-content>
