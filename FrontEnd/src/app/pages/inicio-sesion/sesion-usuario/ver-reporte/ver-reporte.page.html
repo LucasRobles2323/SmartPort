@@ -1,0 +1,56 @@
+<app-header [title]="'Reporte'"></app-header>
+
+<ion-content [fullscreen]="true">
+  <div class="center-content">
+    <ion-card *ngIf="report">
+      <ion-card-header>
+        <ion-card-title >Linea {{ report.numLinea }}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list lines="full">
+          
+          <ion-item *ngIf="report.quantBus">
+            <ion-label>Cantidad de buses: {{ report.quantBus }}</ion-label>
+          </ion-item>
+
+          <ion-item *ngIf="report.velPromBuses">
+            <ion-label>Los buses van a {{ report.velPromBuses }} kilometros/hora </ion-label>
+          </ion-item>
+
+          <ion-item *ngIf="report.horaryDone">
+            <ion-label>De todos los buses, solo {{ report.horaryDone }} cumplieron el horario</ion-label>
+          </ion-item>
+
+          <ion-item *ngIf="report.horaryNoDone">
+            <ion-label>Mientras {{ report.horaryNoDone }} no cumplieron el horario</ion-label>
+          </ion-item>
+        
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-list class="noInput">
+      <ion-item *ngFor="let comment of comments">
+        <ion-label>
+          <h2>{{ comment.comment }}</h2>
+          <p>Comentado por: {{ comment.userNameAutor }}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMoreComments($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando más datos...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </ion-list>
+
+    <ion-button class="ion-padding"
+      (click)="goToUser()"
+      expand="block" 
+      type="button">
+      <ion-icon name="log-in-outline"></ion-icon>
+      ¿Volver a usuario?
+    </ion-button>
+
+  </div>
+</ion-content>

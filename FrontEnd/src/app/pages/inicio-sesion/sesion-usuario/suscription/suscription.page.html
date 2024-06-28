@@ -1,0 +1,75 @@
+<app-header [title]="'Niveles de Suscripción'"></app-header>
+
+<ion-content [fullscreen]="true">
+  <div class="center-content">
+
+    <ion-card class="cheap" (click)="suscriptionUser()">
+      <ion-card-header>
+        <ion-card-title >Usuario CLP 9.900 Mensual</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list lines="full">
+          
+          <ion-item>
+            <ion-label>+ Ver Posición de micros en tiempo real.</ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>+ Ahora puede recibir información actual de la carretera (choques, trafico, entre otros).</ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>+ Puede comentar sobre las lineas para su mejoramiento.</ion-label>
+          </ion-item>
+        
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="expensive" (click)="suscriptionBusisness()">
+      <ion-card-header>
+        <ion-card-title >Empresario CLP 70.000 Mensual</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list lines="full">
+          
+          <ion-item>
+            <ion-label>+ Ver Posición de micros en tiempo real.</ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>+ Ahora puede recibir información actual de la carretera (choques, trafico, entre otros).</ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>+ Puede comentar sobre las lineas para su mejoramiento.</ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>+ Reportes mensuales sobre rendimiento de la linea.</ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>+ Cuentas exclusivas para conductores de la linea.</ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>+ Canal único de soporte con SmartPort.</ion-label>
+          </ion-item>
+        
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-button class="ion-padding"
+      (click)="goToUser()"
+      expand="block" 
+      type="button">
+      <ion-icon name="log-in-outline"></ion-icon>
+      ¿Volver a usuario?
+    </ion-button>
+
+  </div>
+</ion-content>
